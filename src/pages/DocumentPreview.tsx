@@ -12,14 +12,16 @@ import { toast } from "sonner";
 function formatCurrency(n: number) {
   return `E${n.toLocaleString("en-US", {
     minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    maximumFractionDigits: 2
   })}`;
 }
 
 export default function DocumentPreview() {
+
   const { id } = useParams();
   const navigate = useNavigate();
   const { documents } = useDocuments();
+
   const docRef = useRef<HTMLDivElement>(null);
 
   const doc = documents.find((d) => d.id === id);
@@ -32,10 +34,6 @@ export default function DocumentPreview() {
   const tax = calculateTax(subtotal, doc.taxRate);
   const grandTotal = subtotal + tax;
 
-  /* ---------------------------
-     AUTO DOCUMENT NUMBERING
-  --------------------------- */
-
   const autoNumber = `DOC-${doc.createdAt?.slice(0,10).replace(/-/g,"")}-${doc.id?.slice(0,4)}`;
 
   const docNumber =
@@ -47,10 +45,6 @@ export default function DocumentPreview() {
 
   const docLabel = doc.type.charAt(0).toUpperCase() + doc.type.slice(1);
 
-  /* ---------------------------
-     FOOTER MESSAGES
-  --------------------------- */
-
   const footerMessage =
     doc.type === "quote"
       ? "This quotation is valid for 14 days from the issue date."
@@ -58,39 +52,30 @@ export default function DocumentPreview() {
       ? "Payment is due according to the terms stated above."
       : "Thank you for your payment. We appreciate your business.";
 
-  /* ---------------------------
-     QR PAYMENT LINK
-  --------------------------- */
-
   const paymentURL = `https://pay.yourcompany.com/invoice/${docNumber}`;
 
-  const qrCode = `https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=${encodeURIComponent(paymentURL)}`;
+  const qrCode =
+    `https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=${encodeURIComponent(paymentURL)}`;
 
-  /* ---------------------------
-     EXPORT PDF
-  --------------------------- */
+  /* PDF EXPORT */
 
   const exportPDF = async () => {
+
     if (!docRef.current) return;
 
     toast.loading("Generating PDF...");
 
-    const originalStyle = docRef.current.style.cssText;
-
-    docRef.current.style.width = "794px";
-    docRef.current.style.maxWidth = "794px";
-
     const canvas = await html2canvas(docRef.current, {
-      scale: 1.6,
+      scale: 2,
       useCORS: true,
       backgroundColor: "#ffffff",
       width: 794,
-      logging: false
+      windowWidth: 794,
+      scrollX: 0,
+      scrollY: -window.scrollY
     });
 
-    docRef.current.style.cssText = originalStyle;
-
-    const imgData = canvas.toDataURL("image/jpeg", 0.72);
+    const imgData = canvas.toDataURL("image/jpeg", 0.85);
 
     const pdf = new jsPDF("p", "mm", "a4");
 
@@ -105,11 +90,10 @@ export default function DocumentPreview() {
     toast.success("PDF downloaded");
   };
 
-  /* ---------------------------
-     EXPORT JPEG
-  --------------------------- */
+  /* JPEG EXPORT */
 
   const exportJPEG = async () => {
+
     if (!docRef.current) return;
 
     toast.loading("Generating image...");
@@ -133,11 +117,13 @@ export default function DocumentPreview() {
   };
 
   return (
+
     <div className="min-h-screen bg-muted">
 
       {/* NAVBAR */}
 
       <header className="border-b bg-card sticky top-0 z-10">
+
         <div className="container mx-auto flex items-center justify-between py-4 px-4">
 
           <div className="flex items-center gap-4">
@@ -163,20 +149,28 @@ export default function DocumentPreview() {
             </Button>
 
           </div>
+
         </div>
+
       </header>
 
-      {/* DOCUMENT */}
+      {/* PREVIEW AREA */}
 
-      <main className="mx-auto px-4 py-10 flex justify-center max-w-screen-xl">
+      <main className="w-full overflow-x-auto flex justify-center py-10">
+
+        {/* DOCUMENT CANVAS */}
 
         <div
           ref={docRef}
-          className="bg-white w-[794px] min-h-[1123px] shadow-xl overflow-hidden relative"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="bg-white shadow-xl relative flex flex-col"
+          style={{
+            width: "794px",
+            minHeight: "1123px",
+            fontFamily: "'DM Sans', sans-serif"
+          }}
         >
 
-          {/* WATERMARK FOR QUOTES */}
+          {/* WATERMARK */}
 
           {doc.type === "quote" && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
@@ -194,7 +188,9 @@ export default function DocumentPreview() {
             </div>
           )}
 
-          <div className="p-12 pb-20">
+          {/* CONTENT */}
+
+          <div className="flex-1 p-12 pb-6">
 
             {/* HEADER */}
 
@@ -221,25 +217,16 @@ export default function DocumentPreview() {
                     {format(new Date(doc.issueDate || doc.createdAt),"dd MMM yyyy")}
                   </p>
 
-                  {doc.type === "invoice" && doc.dueDate && (
-                    <p>
-                      Due Date:
-                      {" "}
-                      {format(new Date(doc.dueDate),"dd MMM yyyy")}
-                    </p>
-                  )}
-
                 </div>
+
               </div>
 
               {doc.businessInfo.logo && (
-
                 <img
                   src={doc.businessInfo.logo}
                   alt="Logo"
-                  className="h-14 object-contain opacity-90"
+                  className="h-14 object-contain"
                 />
-
               )}
 
             </div>
@@ -298,15 +285,15 @@ export default function DocumentPreview() {
                     Description
                   </th>
 
-                  <th className="text-center py-3 text-xs uppercase tracking-widest w-20">
+                  <th className="text-center py-3 text-xs uppercase w-20">
                     Qty
                   </th>
 
-                  <th className="text-right py-3 text-xs uppercase tracking-widest w-28">
+                  <th className="text-right py-3 text-xs uppercase w-28">
                     Unit
                   </th>
 
-                  <th className="text-right py-3 text-xs uppercase tracking-widest w-28">
+                  <th className="text-right py-3 text-xs uppercase w-28">
                     Total
                   </th>
 
@@ -318,7 +305,11 @@ export default function DocumentPreview() {
 
                 {doc.items.map((item) => (
 
-                  <tr key={item.id} className="border-b border-border">
+                  <tr
+                    key={item.id}
+                    className="border-b"
+                    style={{ pageBreakInside: "avoid" }}
+                  >
 
                     <td className="py-3 text-sm">
                       {item.description}
@@ -379,7 +370,7 @@ export default function DocumentPreview() {
 
             </div>
 
-            {/* QR PAYMENT BLOCK */}
+            {/* QR PAYMENT */}
 
             {doc.type === "invoice" && (
 
@@ -393,7 +384,7 @@ export default function DocumentPreview() {
                     Scan to Pay
                   </p>
 
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground break-all">
                     {paymentURL}
                   </p>
 
@@ -403,24 +394,23 @@ export default function DocumentPreview() {
 
             )}
 
+          </div>
 
-            {/* FOOTER */}
+          {/* FOOTER (STICKY BOTTOM) */}
 
-            <div className="mt-12 pt-6 border-t text-center space-y-2">
+          <div className="border-t text-center p-6">
 
-              <p className="text-sm text-muted-foreground">
-                {footerMessage}
-              </p>
+            <p className="text-sm text-muted-foreground">
+              {footerMessage}
+            </p>
 
-              <p className="text-[10px] text-muted-foreground opacity-70">
-                Generated digitally • No signature required
-              </p>
+            <p className="text-[10px] text-muted-foreground opacity-70">
+              Generated digitally • No signature required
+            </p>
 
-              <p className="text-[10px] text-muted-foreground opacity-70">
-                {doc.businessInfo.name} • {doc.businessInfo.email}
-              </p>
-
-            </div>
+            <p className="text-[10px] text-muted-foreground opacity-70">
+              {doc.businessInfo.name} • {doc.businessInfo.email}
+            </p>
 
           </div>
 
