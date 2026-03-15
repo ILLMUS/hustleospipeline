@@ -233,7 +233,7 @@ export default function DocumentPreview() {
 
             {/* BILLING */}
 
-            <div className="grid grid-cols-2 gap-10 p-6 mb-10 bg-muted rounded-lg">
+            <div className="grid grid-cols-1 gap-10 p-6 mb-10 bg-muted rounded-lg">
 
               <div>
 
