@@ -378,11 +378,13 @@ export default function DocumentPreview() {
       </p>
 
       <p className="text-sm font-semibold">
-        FNB Branch Code: 283064
+       Branch Code: 283064
       </p>
             <p className="text-sm font-semibold">
-        FNB Account Number: 63028804367
+        Account Number: 63028804367
         <br />
+        <br/>
+        <br/>
       </p>
 
       <p className="text-sm font-semibold">
