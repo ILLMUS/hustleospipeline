@@ -376,12 +376,12 @@ export default function DocumentPreview() {
 
               <div className="flex items-center gap-6 mb-10">
 
-                <img src={qrCode} alt="QR Payment" className="w-28 h-28"/>
+              
 
                 <div>
 
                   <p className="text-sm font-semibold">
-                    Scan to Pay
+                    Account Number: 63028804367
                   </p>
 
                   <p className="text-xs text-muted-foreground break-all">
