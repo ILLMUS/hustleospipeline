@@ -381,9 +381,6 @@ export default function DocumentPreview() {
         Mobile Money: 76427025
       </p>
 
-      <p className="text-xs text-muted-foreground break-all">
-        {paymentURL}
-      </p>
     </div>
   </div>
 )}
