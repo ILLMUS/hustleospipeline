@@ -373,6 +373,14 @@ export default function DocumentPreview() {
   <div className="flex items-center gap-6 mb-10">
     <div>
       <p className="text-sm font-semibold">
+        Bank: FNB
+        <br />
+      </p>
+
+      <p className="text-sm font-semibold">
+        FNB Branch Code: 283064
+      </p>
+            <p className="text-sm font-semibold">
         FNB Account Number: 63028804367
         <br />
       </p>
