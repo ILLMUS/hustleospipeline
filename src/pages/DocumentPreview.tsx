@@ -370,28 +370,34 @@ export default function DocumentPreview() {
             {/* QR PAYMENT */}
 
 {doc.type === "invoice" && (
-  <div className="flex items-center gap-6 mb-10">
-    <div>
+  <div className="mb-10">
+
+    {/* Section Header */}
+    <div className="inline-block bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-t-md uppercase tracking-wide">
+      Payment Details
+    </div>
+
+    {/* Payment Card */}
+    <div className="bg-gray-800 text-gray-100 p-5 rounded-b-md rounded-r-md space-y-2">
+
       <p className="text-sm font-semibold">
         Bank: FNB
-        <br />
       </p>
 
       <p className="text-sm font-semibold">
-       Branch Code: 283064
+        Branch Code: 283064
       </p>
-            <p className="text-sm font-semibold">
+
+      <p className="text-sm font-semibold">
         Account Number: 63028804367
-        <br />
-        <br/>
-        <br/>
       </p>
 
-      <p className="text-sm font-semibold">
+      <p className="text-sm font-semibold pt-3">
         Mobile Money: 76427025
       </p>
 
     </div>
+
   </div>
 )}
 
