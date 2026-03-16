@@ -52,7 +52,7 @@ export default function DocumentPreview() {
       ? "Payment is due according to the terms stated above."
       : "Thank you for your payment. We appreciate your business.";
 
-  const paymentURL = `https://pay.yourcompany.com/invoice/${docNumber}`;
+  const paymentURL = `https://rstsealed.com/invoice/${docNumber}`;
 
   const qrCode =
     `https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=${encodeURIComponent(paymentURL)}`;
