@@ -52,7 +52,7 @@ export default function DocumentPreview() {
       ? "Payment is due according to the terms stated above."
       : "Thank you for your payment. We appreciate your business.";
 
-  const paymentURL = `This document confirms that you have approved the quotation`;
+  const paymentURL = `https://pay.yourcompany.com/invoice/${docNumber}`;
 
   const qrCode =
     `https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=${encodeURIComponent(paymentURL)}`;
@@ -372,33 +372,24 @@ export default function DocumentPreview() {
 
             {/* QR PAYMENT */}
 
-            {doc.type === "invoice" && (
+{doc.type === "invoice" && (
+  <div className="flex items-center gap-6 mb-10">
+    <div>
+      <p className="text-sm font-semibold">
+        FNB Account Number: 63028804367
+        <br />
+      </p>
 
-              <div className="flex items-center gap-6 mb-10">
+      <p className="text-sm font-semibold">
+        Mobile Money: 76427025
+      </p>
 
-              
-
-                <div>
-
-                  <p className="text-sm font-semibold">
-                    FNB Account Number: 63028804367
-                    <br>
-                    
-                  </p>
-
-                   <p className="text-sm font-semibold">
-                    Mobile Money: 76427025
-                  </p>
-
-                  <p className="text-xs text-muted-foreground break-all">
-                    {paymentURL}
-                  </p>
-
-                </div>
-
-              </div>
-
-            )}
+      <p className="text-xs text-muted-foreground break-all">
+        {paymentURL}
+      </p>
+    </div>
+  </div>
+)}
 
           </div>
 
