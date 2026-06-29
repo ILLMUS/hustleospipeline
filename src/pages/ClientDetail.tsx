@@ -7,6 +7,7 @@ import { calculateGrandTotal } from '@/types/document';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Tag } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -22,6 +23,7 @@ interface Client {
   phone: string;
   address: string;
   company: string;
+  tags: string[];
   created_at: string;
 }
 
@@ -139,6 +141,13 @@ export default function ClientDetail() {
             {client.phone && <p className="flex items-center gap-2 text-muted-foreground"><Phone className="h-4 w-4 flex-shrink-0" /> {client.phone}</p>}
             {client.address && <p className="flex items-center gap-2 text-muted-foreground"><MapPin className="h-4 w-4 flex-shrink-0" /> {client.address}</p>}
           </div>
+          {client.tags && client.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mt-3">
+              {client.tags.map(tag => (
+                <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
+              ))}
+            </div>
+          )}
         </Card>
 
         {/* Notes & Follow-ups */}

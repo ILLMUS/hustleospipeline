@@ -21,6 +21,13 @@ interface Profile {
   avatar_url: string | null;
 }
 
+const DEFAULT_FOOTER = {
+  footer_line_1: '{business_name}',
+  footer_line_2: '{business_phone}  •  {business_email}  •  {business_address}',
+  footer_reference: '{doc_label} {doc_number}',
+  footer_page_format: 'Page {page} of {total}',
+};
+
 export default function ProfileSettings() {
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -33,6 +40,10 @@ export default function ProfileSettings() {
     business_phone: '',
     business_email: '',
     business_logo: '',
+    footer_line_1: DEFAULT_FOOTER.footer_line_1,
+    footer_line_2: DEFAULT_FOOTER.footer_line_2,
+    footer_reference: DEFAULT_FOOTER.footer_reference,
+    footer_page_format: DEFAULT_FOOTER.footer_page_format,
   });
 
   useEffect(() => {
@@ -52,6 +63,10 @@ export default function ProfileSettings() {
           business_phone: data.business_phone || '',
           business_email: data.business_email || '',
           business_logo: data.business_logo || '',
+          footer_line_1: (data as any).footer_line_1 ?? DEFAULT_FOOTER.footer_line_1,
+          footer_line_2: (data as any).footer_line_2 ?? DEFAULT_FOOTER.footer_line_2,
+          footer_reference: (data as any).footer_reference ?? DEFAULT_FOOTER.footer_reference,
+          footer_page_format: (data as any).footer_page_format ?? DEFAULT_FOOTER.footer_page_format,
         });
       }
       setLoading(false);
@@ -86,6 +101,10 @@ export default function ProfileSettings() {
         business_phone: form.business_phone || null,
         business_email: form.business_email || null,
         business_logo: form.business_logo || null,
+        footer_line_1: form.footer_line_1 || null,
+        footer_line_2: form.footer_line_2 || null,
+        footer_reference: form.footer_reference || null,
+        footer_page_format: form.footer_page_format || null,
       })
       .eq('user_id', user.id);
 
@@ -225,6 +244,60 @@ export default function ProfileSettings() {
                   </label>
                 </div>
               )}
+            </div>
+          </Card>
+
+          {/* PDF Footer */}
+          <Card className="p-6">
+            <h2 className="font-heading font-semibold text-lg mb-1">PDF / JPEG Footer</h2>
+            <p className="text-xs text-muted-foreground mb-4">
+              Customize the footer printed on every exported page. Available tokens:
+              {' '}<code>{'{business_name}'}</code>, <code>{'{business_phone}'}</code>,
+              {' '}<code>{'{business_email}'}</code>, <code>{'{business_address}'}</code>,
+              {' '}<code>{'{doc_label}'}</code>, <code>{'{doc_number}'}</code>,
+              {' '}<code>{'{page}'}</code>, <code>{'{total}'}</code>.
+            </p>
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="footer_line_1">Footer Line 1 (left, bold)</Label>
+                <Input
+                  id="footer_line_1"
+                  value={form.footer_line_1}
+                  onChange={e => update('footer_line_1', e.target.value)}
+                  placeholder={DEFAULT_FOOTER.footer_line_1}
+                  className="mt-1.5"
+                />
+              </div>
+              <div>
+                <Label htmlFor="footer_line_2">Footer Line 2 (left, contact info)</Label>
+                <Input
+                  id="footer_line_2"
+                  value={form.footer_line_2}
+                  onChange={e => update('footer_line_2', e.target.value)}
+                  placeholder={DEFAULT_FOOTER.footer_line_2}
+                  className="mt-1.5"
+                />
+              </div>
+              <div>
+                <Label htmlFor="footer_reference">Document Reference (right, top)</Label>
+                <Input
+                  id="footer_reference"
+                  value={form.footer_reference}
+                  onChange={e => update('footer_reference', e.target.value)}
+                  placeholder={DEFAULT_FOOTER.footer_reference}
+                  className="mt-1.5"
+                />
+              </div>
+              <div>
+                <Label htmlFor="footer_page_format">Page Numbers Format (right, bottom)</Label>
+                <Input
+                  id="footer_page_format"
+                  value={form.footer_page_format}
+                  onChange={e => update('footer_page_format', e.target.value)}
+                  placeholder={DEFAULT_FOOTER.footer_page_format}
+                  className="mt-1.5"
+                />
+              </div>
             </div>
           </Card>
         </div>

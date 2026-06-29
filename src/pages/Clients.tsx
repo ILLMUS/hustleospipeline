@@ -7,7 +7,8 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { ArrowLeft, Plus, Search, Users, Pencil, Trash2, Building2, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, Plus, Search, Users, Pencil, Trash2, Building2, Mail, Phone, MapPin, Tag, X } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
 
 interface Client {
@@ -17,8 +18,11 @@ interface Client {
   phone: string;
   address: string;
   company: string;
+  tags: string[];
   created_at: string;
 }
+
+const PRESET_TAGS = ['VIP', 'Retail', 'Wholesale', 'Enterprise', 'Prospect'];
 
 export default function Clients() {
   const navigate = useNavigate();
@@ -29,7 +33,9 @@ export default function Clients() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingClient, setEditingClient] = useState<Client | null>(null);
 
-  const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', company: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', company: '', tags: [] as string[] });
+  const [tagInput, setTagInput] = useState('');
+  const [filterTag, setFilterTag] = useState<string | null>(null);
 
   const fetchClients = async () => {
     if (!user) return;
@@ -45,14 +51,15 @@ export default function Clients() {
   useEffect(() => { fetchClients(); }, [user]);
 
   const resetForm = () => {
-    setForm({ name: '', email: '', phone: '', address: '', company: '' });
+    setForm({ name: '', email: '', phone: '', address: '', company: '', tags: [] });
     setEditingClient(null);
+    setTagInput('');
   };
 
   const openAdd = () => { resetForm(); setDialogOpen(true); };
   const openEdit = (c: Client) => {
     setEditingClient(c);
-    setForm({ name: c.name, email: c.email, phone: c.phone, address: c.address, company: c.company });
+    setForm({ name: c.name, email: c.email, phone: c.phone, address: c.address, company: c.company, tags: c.tags || [] });
     setDialogOpen(true);
   };
 
@@ -61,13 +68,13 @@ export default function Clients() {
 
     if (editingClient) {
       const { error } = await supabase.from('clients').update({
-        name: form.name, email: form.email, phone: form.phone, address: form.address, company: form.company,
+        name: form.name, email: form.email, phone: form.phone, address: form.address, company: form.company, tags: form.tags,
       }).eq('id', editingClient.id);
       if (error) { toast.error('Failed to update client'); return; }
       toast.success('Client updated');
     } else {
       const { error } = await supabase.from('clients').insert({
-        user_id: user.id, name: form.name, email: form.email, phone: form.phone, address: form.address, company: form.company,
+        user_id: user.id, name: form.name, email: form.email, phone: form.phone, address: form.address, company: form.company, tags: form.tags,
       });
       if (error) { toast.error('Failed to add client'); return; }
       toast.success('Client added');
@@ -84,11 +91,23 @@ export default function Clients() {
     fetchClients();
   };
 
-  const filtered = clients.filter(c =>
-    c.name.toLowerCase().includes(search.toLowerCase()) ||
-    c.company.toLowerCase().includes(search.toLowerCase()) ||
-    c.email.toLowerCase().includes(search.toLowerCase())
-  );
+  const addTag = (tag: string) => {
+    const t = tag.trim();
+    if (t && !form.tags.includes(t)) setForm(f => ({ ...f, tags: [...f.tags, t] }));
+    setTagInput('');
+  };
+
+  const removeTag = (tag: string) => setForm(f => ({ ...f, tags: f.tags.filter(t => t !== tag) }));
+
+  const allTags = [...new Set(clients.flatMap(c => c.tags || []))];
+
+  const filtered = clients.filter(c => {
+    const matchesSearch = c.name.toLowerCase().includes(search.toLowerCase()) ||
+      (c.company || '').toLowerCase().includes(search.toLowerCase()) ||
+      (c.email || '').toLowerCase().includes(search.toLowerCase());
+    const matchesTag = !filterTag || (c.tags || []).includes(filterTag);
+    return matchesSearch && matchesTag;
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -123,6 +142,27 @@ export default function Clients() {
                   <div><Label>Phone</Label><Input value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} placeholder="+1234567890" /></div>
                 </div>
                 <div><Label>Address</Label><Input value={form.address} onChange={e => setForm(f => ({ ...f, address: e.target.value }))} placeholder="Street address" /></div>
+                <div>
+                  <Label>Tags</Label>
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    {form.tags.map(tag => (
+                      <Badge key={tag} variant="secondary" className="gap-1 text-xs">
+                        {tag}
+                        <X className="h-3 w-3 cursor-pointer" onClick={() => removeTag(tag)} />
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="flex gap-2">
+                    <Input value={tagInput} onChange={e => setTagInput(e.target.value)} placeholder="Add tag..." className="flex-1"
+                      onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); addTag(tagInput); } }} />
+                    <Button type="button" size="sm" variant="outline" onClick={() => addTag(tagInput)}>Add</Button>
+                  </div>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {PRESET_TAGS.filter(t => !form.tags.includes(t)).map(t => (
+                      <Badge key={t} variant="outline" className="cursor-pointer text-[10px]" onClick={() => addTag(t)}>{t}</Badge>
+                    ))}
+                  </div>
+                </div>
                 <Button onClick={handleSave} className="w-full">{editingClient ? 'Update Client' : 'Add Client'}</Button>
               </div>
             </DialogContent>
@@ -131,11 +171,28 @@ export default function Clients() {
       </header>
 
       <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
-        {/* Search */}
-        <div className="relative mb-4 sm:mb-6">
+        {/* Search & Tag Filter */}
+        <div className="relative mb-3">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search clients..." className="pl-9" />
         </div>
+        {allTags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-4 sm:mb-6">
+            <Badge
+              variant={filterTag === null ? 'default' : 'outline'}
+              className="cursor-pointer text-xs"
+              onClick={() => setFilterTag(null)}
+            >All</Badge>
+            {allTags.map(tag => (
+              <Badge
+                key={tag}
+                variant={filterTag === tag ? 'default' : 'outline'}
+                className="cursor-pointer text-xs"
+                onClick={() => setFilterTag(filterTag === tag ? null : tag)}
+              >{tag}</Badge>
+            ))}
+          </div>
+        )}
 
         {loading ? (
           <div className="text-center py-20 text-muted-foreground">Loading clients...</div>
@@ -185,6 +242,13 @@ export default function Clients() {
                   {client.phone && <p className="flex items-center gap-1.5"><Phone className="h-3 w-3 flex-shrink-0" /> {client.phone}</p>}
                   {client.address && <p className="flex items-center gap-1.5 truncate"><MapPin className="h-3 w-3 flex-shrink-0" /> {client.address}</p>}
                 </div>
+                {client.tags && client.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1 mt-1">
+                    {client.tags.map(tag => (
+                      <Badge key={tag} variant="secondary" className="text-[10px]">{tag}</Badge>
+                    ))}
+                  </div>
+                )}
               </Card>
             ))}
           </div>

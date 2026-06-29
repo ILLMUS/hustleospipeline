@@ -61,6 +61,7 @@ export type Database = {
           id: string
           name: string
           phone: string | null
+          tags: string[]
           updated_at: string
           user_id: string
         }
@@ -72,6 +73,7 @@ export type Database = {
           id?: string
           name: string
           phone?: string | null
+          tags?: string[]
           updated_at?: string
           user_id: string
         }
@@ -83,6 +85,7 @@ export type Database = {
           id?: string
           name?: string
           phone?: string | null
+          tags?: string[]
           updated_at?: string
           user_id?: string
         }
@@ -223,6 +226,10 @@ export type Database = {
           business_phone: string | null
           created_at: string
           display_name: string | null
+          footer_line_1: string | null
+          footer_line_2: string | null
+          footer_page_format: string | null
+          footer_reference: string | null
           id: string
           updated_at: string
           user_id: string
@@ -236,6 +243,10 @@ export type Database = {
           business_phone?: string | null
           created_at?: string
           display_name?: string | null
+          footer_line_1?: string | null
+          footer_line_2?: string | null
+          footer_page_format?: string | null
+          footer_reference?: string | null
           id?: string
           updated_at?: string
           user_id: string
@@ -249,6 +260,10 @@ export type Database = {
           business_phone?: string | null
           created_at?: string
           display_name?: string | null
+          footer_line_1?: string | null
+          footer_line_2?: string | null
+          footer_page_format?: string | null
+          footer_reference?: string | null
           id?: string
           updated_at?: string
           user_id?: string
