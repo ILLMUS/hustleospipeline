@@ -22,7 +22,7 @@ export default function RevenueChart() {
 
     const totals: Record<string, number> = {};
     documents
-      .filter(d => d.type === 'invoice' || d.type === 'receipt')
+      .filter(d => d.type === 'receipt')
       .forEach(doc => {
         const monthKey = format(new Date(doc.createdAt), 'yyyy-MM');
         totals[monthKey] = (totals[monthKey] || 0) + calculateGrandTotal(doc.items, doc.taxRate);

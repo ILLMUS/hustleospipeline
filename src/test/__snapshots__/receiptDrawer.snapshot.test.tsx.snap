@@ -1,0 +1,2907 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ReceiptDrawerContent — layout snapshots > matches snapshot: doc present but with partial fields (no quote #, no due date, no tax) 1`] = `
+<div>
+  <div
+    data-testid="drawer-body"
+  >
+    <div
+      class="text-left"
+    >
+      <h2
+        class="flex items-center gap-2 text-lg font-heading font-semibold"
+      >
+        <svg
+          class="lucide lucide-receipt h-4 w-4 text-primary"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"
+          />
+          <path
+            d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
+          />
+          <path
+            d="M12 17.5v-11"
+          />
+        </svg>
+        REC-0001
+      </h2>
+      <p
+        class="text-xs text-muted-foreground"
+        data-testid="drawer-summary"
+      >
+        Issued 
+        01 Jul 2026
+         · Tracked income 
+        E100.00
+      </p>
+    </div>
+    <div
+      class="mt-5 space-y-5"
+    >
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Receipt
+        </p>
+        <div
+          class="rounded-lg border p-3 space-y-1 text-sm"
+          data-testid="drawer-receipt"
+        >
+          <div
+            class="grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-muted-foreground"
+          >
+            <span>
+              Invoice #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              INV-0001
+            </span>
+            <span>
+              Receipt #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              REC-0001
+            </span>
+            <span>
+              Issue date
+            </span>
+            <span
+              class="text-foreground"
+            >
+              01 Jul 2026
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Who bought
+        </p>
+        <div
+          class="rounded-lg border p-3 text-sm space-y-0.5"
+          data-testid="drawer-who"
+        >
+          <p
+            class="font-semibold"
+          >
+            Acme Corp
+          </p>
+          <p
+            class="text-xs text-muted-foreground"
+          >
+            a@b.c
+          </p>
+          <p
+            class="text-xs text-muted-foreground"
+          >
+            555
+          </p>
+          <p
+            class="text-xs text-muted-foreground whitespace-pre-line"
+          >
+            1 St
+          </p>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          What they bought
+        </p>
+        <div
+          class="rounded-lg border overflow-hidden"
+          data-testid="drawer-items"
+        >
+          <table
+            class="w-full text-xs"
+          >
+            <thead
+              class="bg-muted/40 text-muted-foreground"
+            >
+              <tr>
+                <th
+                  class="text-left font-medium py-2 px-2"
+                >
+                  Item
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Qty
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Unit
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-t"
+              >
+                <td
+                  class="py-1.5 px-2"
+                >
+                  Widget
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  2
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  E50.00
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right font-medium"
+                >
+                  E100.00
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="text-xs space-y-0.5 px-1"
+        >
+          <div
+            class="flex justify-between"
+          >
+            <span
+              class="text-muted-foreground"
+            >
+              Subtotal
+            </span>
+            <span
+              data-testid="drawer-subtotal"
+            >
+              E100.00
+            </span>
+          </div>
+          <div
+            class="flex justify-between font-semibold pt-1 border-t"
+          >
+            <span>
+              Total
+            </span>
+            <span
+              data-testid="drawer-total"
+            >
+              E100.00
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Money allocated
+        </p>
+        <div
+          class="grid grid-cols-2 gap-2"
+          data-testid="drawer-buckets"
+        >
+          <div
+            class="p-3 rounded-lg bg-warning/10"
+            data-testid="drawer-bucket-expenses"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-wallet h-3.5 w-3.5 text-warning"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+                />
+                <path
+                  d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Expenses
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-warning"
+              data-testid="drawer-bucket-expenses-amount"
+            >
+              E40.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              40.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-success/10"
+            data-testid="drawer-bucket-reserve"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-piggy-bank h-3.5 w-3.5 text-success"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"
+                />
+                <path
+                  d="M2 9v1c0 1.1.9 2 2 2h1"
+                />
+                <path
+                  d="M16 11h.01"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Reserve
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-success"
+              data-testid="drawer-bucket-reserve-amount"
+            >
+              E20.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              20.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-primary/10"
+            data-testid="drawer-bucket-taxes"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-landmark h-3.5 w-3.5 text-primary"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="22"
+                  y2="22"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="10"
+                  x2="10"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="14"
+                  x2="14"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="18"
+                  x2="18"
+                  y1="18"
+                  y2="11"
+                />
+                <polygon
+                  points="12 2 20 7 4 7"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Taxes
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-primary"
+              data-testid="drawer-bucket-taxes-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-destructive/10"
+            data-testid="drawer-bucket-debts"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-trending-down h-3.5 w-3.5 text-destructive"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="22 17 13.5 8.5 8.5 13.5 2 7"
+                />
+                <polyline
+                  points="16 17 22 17 22 11"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Debts
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-destructive"
+              data-testid="drawer-bucket-debts-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+        </div>
+        <ul
+          class="space-y-1 pt-1"
+        >
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-warning/10"
+              />
+              <span
+                class="capitalize"
+              >
+                expenses
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 40%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E40.00
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-success/10"
+              />
+              <span
+                class="capitalize"
+              >
+                reserve
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 20%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E20.00
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReceiptDrawerContent — layout snapshots > matches snapshot: doc reference missing AND items null AND no allocations 1`] = `
+<div>
+  <div
+    data-testid="drawer-body"
+  >
+    <div
+      class="text-left"
+    >
+      <h2
+        class="flex items-center gap-2 text-lg font-heading font-semibold"
+      >
+        <svg
+          class="lucide lucide-receipt h-4 w-4 text-primary"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"
+          />
+          <path
+            d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
+          />
+          <path
+            d="M12 17.5v-11"
+          />
+        </svg>
+        REC-0001
+      </h2>
+      <p
+        class="text-xs text-muted-foreground"
+        data-testid="drawer-summary"
+      >
+        Issued 
+        01 Jul 2026
+         · Tracked income 
+        E100.00
+      </p>
+    </div>
+    <div
+      class="mt-5 space-y-5"
+    >
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Receipt
+        </p>
+        <div
+          class="rounded-lg border p-3 space-y-1 text-sm"
+          data-testid="drawer-receipt"
+        >
+          <p
+            class="text-xs text-muted-foreground"
+            data-testid="drawer-missing-ref"
+          >
+            Original document not available — showing snapshot from money entry.
+          </p>
+          <div
+            class="grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-muted-foreground"
+          >
+            <span>
+              Receipt #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              REC-0001
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Who bought
+        </p>
+        <div
+          class="rounded-lg border p-3 text-sm space-y-0.5"
+          data-testid="drawer-who"
+        >
+          <p
+            class="font-semibold"
+          >
+            Unknown
+          </p>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          What they bought
+        </p>
+        <div
+          class="rounded-lg border overflow-hidden"
+          data-testid="drawer-items"
+        >
+          <p
+            class="p-3 text-xs text-muted-foreground"
+            data-testid="drawer-no-items"
+          >
+            No line items recorded.
+          </p>
+        </div>
+        <div
+          class="text-xs space-y-0.5 px-1"
+        >
+          <div
+            class="flex justify-between"
+          >
+            <span
+              class="text-muted-foreground"
+            >
+              Subtotal
+            </span>
+            <span
+              data-testid="drawer-subtotal"
+            >
+              E0.00
+            </span>
+          </div>
+          <div
+            class="flex justify-between font-semibold pt-1 border-t"
+          >
+            <span>
+              Total
+            </span>
+            <span
+              data-testid="drawer-total"
+            >
+              E100.00
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Money allocated
+        </p>
+        <div
+          class="grid grid-cols-2 gap-2"
+          data-testid="drawer-buckets"
+        >
+          <div
+            class="p-3 rounded-lg bg-warning/10"
+            data-testid="drawer-bucket-expenses"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-wallet h-3.5 w-3.5 text-warning"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+                />
+                <path
+                  d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Expenses
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-warning"
+              data-testid="drawer-bucket-expenses-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-success/10"
+            data-testid="drawer-bucket-reserve"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-piggy-bank h-3.5 w-3.5 text-success"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"
+                />
+                <path
+                  d="M2 9v1c0 1.1.9 2 2 2h1"
+                />
+                <path
+                  d="M16 11h.01"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Reserve
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-success"
+              data-testid="drawer-bucket-reserve-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-primary/10"
+            data-testid="drawer-bucket-taxes"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-landmark h-3.5 w-3.5 text-primary"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="22"
+                  y2="22"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="10"
+                  x2="10"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="14"
+                  x2="14"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="18"
+                  x2="18"
+                  y1="18"
+                  y2="11"
+                />
+                <polygon
+                  points="12 2 20 7 4 7"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Taxes
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-primary"
+              data-testid="drawer-bucket-taxes-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-destructive/10"
+            data-testid="drawer-bucket-debts"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-trending-down h-3.5 w-3.5 text-destructive"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="22 17 13.5 8.5 8.5 13.5 2 7"
+                />
+                <polyline
+                  points="16 17 22 17 22 11"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Debts
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-destructive"
+              data-testid="drawer-bucket-debts-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+        </div>
+        <ul
+          class="space-y-1 pt-1"
+        />
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReceiptDrawerContent — layout snapshots > matches snapshot: doc reference missing, falls back to entry items 1`] = `
+<div>
+  <div
+    data-testid="drawer-body"
+  >
+    <div
+      class="text-left"
+    >
+      <h2
+        class="flex items-center gap-2 text-lg font-heading font-semibold"
+      >
+        <svg
+          class="lucide lucide-receipt h-4 w-4 text-primary"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"
+          />
+          <path
+            d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
+          />
+          <path
+            d="M12 17.5v-11"
+          />
+        </svg>
+        REC-0001
+      </h2>
+      <p
+        class="text-xs text-muted-foreground"
+        data-testid="drawer-summary"
+      >
+        Issued 
+        01 Jul 2026
+         · Tracked income 
+        E100.00
+      </p>
+    </div>
+    <div
+      class="mt-5 space-y-5"
+    >
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Receipt
+        </p>
+        <div
+          class="rounded-lg border p-3 space-y-1 text-sm"
+          data-testid="drawer-receipt"
+        >
+          <p
+            class="text-xs text-muted-foreground"
+            data-testid="drawer-missing-ref"
+          >
+            Original document not available — showing snapshot from money entry.
+          </p>
+          <div
+            class="grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-muted-foreground"
+          >
+            <span>
+              Receipt #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              REC-0001
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Who bought
+        </p>
+        <div
+          class="rounded-lg border p-3 text-sm space-y-0.5"
+          data-testid="drawer-who"
+        >
+          <p
+            class="font-semibold"
+          >
+            Acme Corp
+          </p>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          What they bought
+        </p>
+        <div
+          class="rounded-lg border overflow-hidden"
+          data-testid="drawer-items"
+        >
+          <table
+            class="w-full text-xs"
+          >
+            <thead
+              class="bg-muted/40 text-muted-foreground"
+            >
+              <tr>
+                <th
+                  class="text-left font-medium py-2 px-2"
+                >
+                  Item
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Qty
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Unit
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-t"
+              >
+                <td
+                  class="py-1.5 px-2"
+                >
+                  Widget
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  2
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  E50.00
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right font-medium"
+                >
+                  E100.00
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="text-xs space-y-0.5 px-1"
+        >
+          <div
+            class="flex justify-between"
+          >
+            <span
+              class="text-muted-foreground"
+            >
+              Subtotal
+            </span>
+            <span
+              data-testid="drawer-subtotal"
+            >
+              E100.00
+            </span>
+          </div>
+          <div
+            class="flex justify-between font-semibold pt-1 border-t"
+          >
+            <span>
+              Total
+            </span>
+            <span
+              data-testid="drawer-total"
+            >
+              E100.00
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Money allocated
+        </p>
+        <div
+          class="grid grid-cols-2 gap-2"
+          data-testid="drawer-buckets"
+        >
+          <div
+            class="p-3 rounded-lg bg-warning/10"
+            data-testid="drawer-bucket-expenses"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-wallet h-3.5 w-3.5 text-warning"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+                />
+                <path
+                  d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Expenses
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-warning"
+              data-testid="drawer-bucket-expenses-amount"
+            >
+              E40.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              40.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-success/10"
+            data-testid="drawer-bucket-reserve"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-piggy-bank h-3.5 w-3.5 text-success"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"
+                />
+                <path
+                  d="M2 9v1c0 1.1.9 2 2 2h1"
+                />
+                <path
+                  d="M16 11h.01"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Reserve
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-success"
+              data-testid="drawer-bucket-reserve-amount"
+            >
+              E20.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              20.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-primary/10"
+            data-testid="drawer-bucket-taxes"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-landmark h-3.5 w-3.5 text-primary"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="22"
+                  y2="22"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="10"
+                  x2="10"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="14"
+                  x2="14"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="18"
+                  x2="18"
+                  y1="18"
+                  y2="11"
+                />
+                <polygon
+                  points="12 2 20 7 4 7"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Taxes
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-primary"
+              data-testid="drawer-bucket-taxes-amount"
+            >
+              E25.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              25.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-destructive/10"
+            data-testid="drawer-bucket-debts"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-trending-down h-3.5 w-3.5 text-destructive"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="22 17 13.5 8.5 8.5 13.5 2 7"
+                />
+                <polyline
+                  points="16 17 22 17 22 11"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Debts
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-destructive"
+              data-testid="drawer-bucket-debts-amount"
+            >
+              E15.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              15.0
+              %
+            </p>
+          </div>
+        </div>
+        <ul
+          class="space-y-1 pt-1"
+        >
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-warning/10"
+              />
+              <span
+                class="capitalize"
+              >
+                expenses
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 40%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E40.00
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-success/10"
+              />
+              <span
+                class="capitalize"
+              >
+                reserve
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 20%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E20.00
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-primary/10"
+              />
+              <span
+                class="capitalize"
+              >
+                taxes
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 25%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E25.00
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-destructive/10"
+              />
+              <span
+                class="capitalize"
+              >
+                debts
+              </span>
+              <div
+                class="inline-flex items-center rounded-full border py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-[9px] px-1"
+              >
+                manual
+              </div>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E15.00
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReceiptDrawerContent — layout snapshots > matches snapshot: entry with missing receipt_number and unknown client 1`] = `
+<div>
+  <div
+    data-testid="drawer-body"
+  >
+    <div
+      class="text-left"
+    >
+      <h2
+        class="flex items-center gap-2 text-lg font-heading font-semibold"
+      >
+        <svg
+          class="lucide lucide-receipt h-4 w-4 text-primary"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"
+          />
+          <path
+            d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
+          />
+          <path
+            d="M12 17.5v-11"
+          />
+        </svg>
+        Receipt
+      </h2>
+      <p
+        class="text-xs text-muted-foreground"
+        data-testid="drawer-summary"
+      >
+        Issued 
+        01 Jul 2026
+         · Tracked income 
+        E100.00
+      </p>
+    </div>
+    <div
+      class="mt-5 space-y-5"
+    >
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Receipt
+        </p>
+        <div
+          class="rounded-lg border p-3 space-y-1 text-sm"
+          data-testid="drawer-receipt"
+        >
+          <p
+            class="text-xs text-muted-foreground"
+            data-testid="drawer-missing-ref"
+          >
+            Original document not available — showing snapshot from money entry.
+          </p>
+          <div
+            class="grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-muted-foreground"
+          />
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Who bought
+        </p>
+        <div
+          class="rounded-lg border p-3 text-sm space-y-0.5"
+          data-testid="drawer-who"
+        >
+          <p
+            class="font-semibold"
+          >
+            Unknown
+          </p>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          What they bought
+        </p>
+        <div
+          class="rounded-lg border overflow-hidden"
+          data-testid="drawer-items"
+        >
+          <table
+            class="w-full text-xs"
+          >
+            <thead
+              class="bg-muted/40 text-muted-foreground"
+            >
+              <tr>
+                <th
+                  class="text-left font-medium py-2 px-2"
+                >
+                  Item
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Qty
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Unit
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-t"
+              >
+                <td
+                  class="py-1.5 px-2"
+                >
+                  Widget
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  2
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  E50.00
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right font-medium"
+                >
+                  E100.00
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="text-xs space-y-0.5 px-1"
+        >
+          <div
+            class="flex justify-between"
+          >
+            <span
+              class="text-muted-foreground"
+            >
+              Subtotal
+            </span>
+            <span
+              data-testid="drawer-subtotal"
+            >
+              E100.00
+            </span>
+          </div>
+          <div
+            class="flex justify-between font-semibold pt-1 border-t"
+          >
+            <span>
+              Total
+            </span>
+            <span
+              data-testid="drawer-total"
+            >
+              E100.00
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Money allocated
+        </p>
+        <div
+          class="grid grid-cols-2 gap-2"
+          data-testid="drawer-buckets"
+        >
+          <div
+            class="p-3 rounded-lg bg-warning/10"
+            data-testid="drawer-bucket-expenses"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-wallet h-3.5 w-3.5 text-warning"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+                />
+                <path
+                  d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Expenses
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-warning"
+              data-testid="drawer-bucket-expenses-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-success/10"
+            data-testid="drawer-bucket-reserve"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-piggy-bank h-3.5 w-3.5 text-success"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"
+                />
+                <path
+                  d="M2 9v1c0 1.1.9 2 2 2h1"
+                />
+                <path
+                  d="M16 11h.01"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Reserve
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-success"
+              data-testid="drawer-bucket-reserve-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-primary/10"
+            data-testid="drawer-bucket-taxes"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-landmark h-3.5 w-3.5 text-primary"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="22"
+                  y2="22"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="10"
+                  x2="10"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="14"
+                  x2="14"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="18"
+                  x2="18"
+                  y1="18"
+                  y2="11"
+                />
+                <polygon
+                  points="12 2 20 7 4 7"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Taxes
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-primary"
+              data-testid="drawer-bucket-taxes-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-destructive/10"
+            data-testid="drawer-bucket-debts"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-trending-down h-3.5 w-3.5 text-destructive"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="22 17 13.5 8.5 8.5 13.5 2 7"
+                />
+                <polyline
+                  points="16 17 22 17 22 11"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Debts
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-destructive"
+              data-testid="drawer-bucket-debts-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+        </div>
+        <ul
+          class="space-y-1 pt-1"
+        />
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReceiptDrawerContent — layout snapshots > matches snapshot: full receipt + doc + all four allocations 1`] = `
+<div>
+  <div
+    data-testid="drawer-body"
+  >
+    <div
+      class="text-left"
+    >
+      <h2
+        class="flex items-center gap-2 text-lg font-heading font-semibold"
+      >
+        <svg
+          class="lucide lucide-receipt h-4 w-4 text-primary"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"
+          />
+          <path
+            d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
+          />
+          <path
+            d="M12 17.5v-11"
+          />
+        </svg>
+        REC-0001
+      </h2>
+      <p
+        class="text-xs text-muted-foreground"
+        data-testid="drawer-summary"
+      >
+        Issued 
+        01 Jul 2026
+         · Tracked income 
+        E100.00
+      </p>
+    </div>
+    <div
+      class="mt-5 space-y-5"
+    >
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Receipt
+        </p>
+        <div
+          class="rounded-lg border p-3 space-y-1 text-sm"
+          data-testid="drawer-receipt"
+        >
+          <p
+            class="font-semibold"
+          >
+            Order 42
+          </p>
+          <div
+            class="grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-muted-foreground"
+          >
+            <span>
+              Quote #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              Q-0001
+            </span>
+            <span>
+              Invoice #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              INV-0001
+            </span>
+            <span>
+              Receipt #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              REC-0001
+            </span>
+            <span>
+              Issue date
+            </span>
+            <span
+              class="text-foreground"
+            >
+              01 Jul 2026
+            </span>
+            <span>
+              Due date
+            </span>
+            <span
+              class="text-foreground"
+            >
+              15 Jul 2026
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Who bought
+        </p>
+        <div
+          class="rounded-lg border p-3 text-sm space-y-0.5"
+          data-testid="drawer-who"
+        >
+          <p
+            class="font-semibold"
+          >
+            Acme Corp
+          </p>
+          <p
+            class="text-xs text-muted-foreground"
+          >
+            a@b.c
+          </p>
+          <p
+            class="text-xs text-muted-foreground"
+          >
+            555
+          </p>
+          <p
+            class="text-xs text-muted-foreground whitespace-pre-line"
+          >
+            1 St
+          </p>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          What they bought
+        </p>
+        <div
+          class="rounded-lg border overflow-hidden"
+          data-testid="drawer-items"
+        >
+          <table
+            class="w-full text-xs"
+          >
+            <thead
+              class="bg-muted/40 text-muted-foreground"
+            >
+              <tr>
+                <th
+                  class="text-left font-medium py-2 px-2"
+                >
+                  Item
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Qty
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Unit
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-t"
+              >
+                <td
+                  class="py-1.5 px-2"
+                >
+                  Widget
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  2
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  E50.00
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right font-medium"
+                >
+                  E100.00
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="text-xs space-y-0.5 px-1"
+        >
+          <div
+            class="flex justify-between"
+          >
+            <span
+              class="text-muted-foreground"
+            >
+              Subtotal
+            </span>
+            <span
+              data-testid="drawer-subtotal"
+            >
+              E100.00
+            </span>
+          </div>
+          <div
+            class="flex justify-between"
+          >
+            <span
+              class="text-muted-foreground"
+            >
+              Tax (
+              10
+              %)
+            </span>
+            <span
+              data-testid="drawer-tax"
+            >
+              E10.00
+            </span>
+          </div>
+          <div
+            class="flex justify-between font-semibold pt-1 border-t"
+          >
+            <span>
+              Total
+            </span>
+            <span
+              data-testid="drawer-total"
+            >
+              E100.00
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Money allocated
+        </p>
+        <div
+          class="grid grid-cols-2 gap-2"
+          data-testid="drawer-buckets"
+        >
+          <div
+            class="p-3 rounded-lg bg-warning/10"
+            data-testid="drawer-bucket-expenses"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-wallet h-3.5 w-3.5 text-warning"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+                />
+                <path
+                  d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Expenses
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-warning"
+              data-testid="drawer-bucket-expenses-amount"
+            >
+              E40.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              40.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-success/10"
+            data-testid="drawer-bucket-reserve"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-piggy-bank h-3.5 w-3.5 text-success"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"
+                />
+                <path
+                  d="M2 9v1c0 1.1.9 2 2 2h1"
+                />
+                <path
+                  d="M16 11h.01"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Reserve
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-success"
+              data-testid="drawer-bucket-reserve-amount"
+            >
+              E20.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              20.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-primary/10"
+            data-testid="drawer-bucket-taxes"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-landmark h-3.5 w-3.5 text-primary"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="22"
+                  y2="22"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="10"
+                  x2="10"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="14"
+                  x2="14"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="18"
+                  x2="18"
+                  y1="18"
+                  y2="11"
+                />
+                <polygon
+                  points="12 2 20 7 4 7"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Taxes
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-primary"
+              data-testid="drawer-bucket-taxes-amount"
+            >
+              E25.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              25.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-destructive/10"
+            data-testid="drawer-bucket-debts"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-trending-down h-3.5 w-3.5 text-destructive"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="22 17 13.5 8.5 8.5 13.5 2 7"
+                />
+                <polyline
+                  points="16 17 22 17 22 11"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Debts
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-destructive"
+              data-testid="drawer-bucket-debts-amount"
+            >
+              E15.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              15.0
+              %
+            </p>
+          </div>
+        </div>
+        <ul
+          class="space-y-1 pt-1"
+        >
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-warning/10"
+              />
+              <span
+                class="capitalize"
+              >
+                expenses
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 40%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E40.00
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-success/10"
+              />
+              <span
+                class="capitalize"
+              >
+                reserve
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 20%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E20.00
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-primary/10"
+              />
+              <span
+                class="capitalize"
+              >
+                taxes
+              </span>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+                Auto 25%
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E25.00
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-xs border-b last:border-0 py-1"
+          >
+            <span
+              class="flex items-center gap-1.5 min-w-0"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-destructive/10"
+              />
+              <span
+                class="capitalize"
+              >
+                debts
+              </span>
+              <div
+                class="inline-flex items-center rounded-full border py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-[9px] px-1"
+              >
+                manual
+              </div>
+              <span
+                class="text-muted-foreground truncate"
+              >
+                — 
+              </span>
+            </span>
+            <span
+              class="font-medium whitespace-nowrap"
+            >
+              E15.00
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReceiptDrawerContent — layout snapshots > matches snapshot: malformed items array is filtered without breaking layout 1`] = `
+<div>
+  <div
+    data-testid="drawer-body"
+  >
+    <div
+      class="text-left"
+    >
+      <h2
+        class="flex items-center gap-2 text-lg font-heading font-semibold"
+      >
+        <svg
+          class="lucide lucide-receipt h-4 w-4 text-primary"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"
+          />
+          <path
+            d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
+          />
+          <path
+            d="M12 17.5v-11"
+          />
+        </svg>
+        REC-0001
+      </h2>
+      <p
+        class="text-xs text-muted-foreground"
+        data-testid="drawer-summary"
+      >
+        Issued 
+        01 Jul 2026
+         · Tracked income 
+        E100.00
+      </p>
+    </div>
+    <div
+      class="mt-5 space-y-5"
+    >
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Receipt
+        </p>
+        <div
+          class="rounded-lg border p-3 space-y-1 text-sm"
+          data-testid="drawer-receipt"
+        >
+          <p
+            class="text-xs text-muted-foreground"
+            data-testid="drawer-missing-ref"
+          >
+            Original document not available — showing snapshot from money entry.
+          </p>
+          <div
+            class="grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-muted-foreground"
+          >
+            <span>
+              Receipt #
+            </span>
+            <span
+              class="text-foreground"
+            >
+              REC-0001
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Who bought
+        </p>
+        <div
+          class="rounded-lg border p-3 text-sm space-y-0.5"
+          data-testid="drawer-who"
+        >
+          <p
+            class="font-semibold"
+          >
+            Acme Corp
+          </p>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          What they bought
+        </p>
+        <div
+          class="rounded-lg border overflow-hidden"
+          data-testid="drawer-items"
+        >
+          <table
+            class="w-full text-xs"
+          >
+            <thead
+              class="bg-muted/40 text-muted-foreground"
+            >
+              <tr>
+                <th
+                  class="text-left font-medium py-2 px-2"
+                >
+                  Item
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Qty
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Unit
+                </th>
+                <th
+                  class="text-right font-medium py-2 px-2"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-t"
+              >
+                <td
+                  class="py-1.5 px-2"
+                >
+                  Good
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  1
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right"
+                >
+                  E5.00
+                </td>
+                <td
+                  class="py-1.5 px-2 text-right font-medium"
+                >
+                  E5.00
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="text-xs space-y-0.5 px-1"
+        >
+          <div
+            class="flex justify-between"
+          >
+            <span
+              class="text-muted-foreground"
+            >
+              Subtotal
+            </span>
+            <span
+              data-testid="drawer-subtotal"
+            >
+              E5.00
+            </span>
+          </div>
+          <div
+            class="flex justify-between font-semibold pt-1 border-t"
+          >
+            <span>
+              Total
+            </span>
+            <span
+              data-testid="drawer-total"
+            >
+              E100.00
+            </span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="space-y-2"
+      >
+        <p
+          class="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
+        >
+          Money allocated
+        </p>
+        <div
+          class="grid grid-cols-2 gap-2"
+          data-testid="drawer-buckets"
+        >
+          <div
+            class="p-3 rounded-lg bg-warning/10"
+            data-testid="drawer-bucket-expenses"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-wallet h-3.5 w-3.5 text-warning"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+                />
+                <path
+                  d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Expenses
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-warning"
+              data-testid="drawer-bucket-expenses-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-success/10"
+            data-testid="drawer-bucket-reserve"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-piggy-bank h-3.5 w-3.5 text-success"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"
+                />
+                <path
+                  d="M2 9v1c0 1.1.9 2 2 2h1"
+                />
+                <path
+                  d="M16 11h.01"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Reserve
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-success"
+              data-testid="drawer-bucket-reserve-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-primary/10"
+            data-testid="drawer-bucket-taxes"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-landmark h-3.5 w-3.5 text-primary"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="22"
+                  y2="22"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="10"
+                  x2="10"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="14"
+                  x2="14"
+                  y1="18"
+                  y2="11"
+                />
+                <line
+                  x1="18"
+                  x2="18"
+                  y1="18"
+                  y2="11"
+                />
+                <polygon
+                  points="12 2 20 7 4 7"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Taxes
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-primary"
+              data-testid="drawer-bucket-taxes-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+          <div
+            class="p-3 rounded-lg bg-destructive/10"
+            data-testid="drawer-bucket-debts"
+          >
+            <div
+              class="flex items-center gap-1.5 mb-1"
+            >
+              <svg
+                class="lucide lucide-trending-down h-3.5 w-3.5 text-destructive"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="22 17 13.5 8.5 8.5 13.5 2 7"
+                />
+                <polyline
+                  points="16 17 22 17 22 11"
+                />
+              </svg>
+              <p
+                class="text-[11px] font-medium"
+              >
+                Debts
+              </p>
+            </div>
+            <p
+              class="text-sm font-heading font-bold text-destructive"
+              data-testid="drawer-bucket-debts-amount"
+            >
+              E0.00
+            </p>
+            <p
+              class="text-[10px] text-muted-foreground"
+            >
+              0.0
+              %
+            </p>
+          </div>
+        </div>
+        <ul
+          class="space-y-1 pt-1"
+        />
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReceiptDrawerContent — layout snapshots > matches snapshot: no data (empty state) 1`] = `
+<div>
+  <div
+    class="p-6 text-sm text-muted-foreground"
+    data-testid="drawer-empty"
+  >
+    No receipt selected.
+  </div>
+</div>
+`;

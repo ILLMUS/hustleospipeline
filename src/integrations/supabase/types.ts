@@ -14,6 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
+      allocation_settings: {
+        Row: {
+          created_at: string
+          debts_pct: number
+          expenses_pct: number
+          id: string
+          reserve_pct: number
+          taxes_pct: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          debts_pct?: number
+          expenses_pct?: number
+          id?: string
+          reserve_pct?: number
+          taxes_pct?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          debts_pct?: number
+          expenses_pct?: number
+          id?: string
+          reserve_pct?: number
+          taxes_pct?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      allocations: {
+        Row: {
+          amount: number
+          bucket: string
+          created_at: string
+          id: string
+          is_auto: boolean
+          money_entry_id: string
+          note: string | null
+          user_id: string
+        }
+        Insert: {
+          amount?: number
+          bucket: string
+          created_at?: string
+          id?: string
+          is_auto?: boolean
+          money_entry_id: string
+          note?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          bucket?: string
+          created_at?: string
+          id?: string
+          is_auto?: boolean
+          money_entry_id?: string
+          note?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "allocations_money_entry_id_fkey"
+            columns: ["money_entry_id"]
+            isOneToOne: false
+            referencedRelation: "money_entries"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       client_notes: {
         Row: {
           client_id: string
@@ -212,6 +286,53 @@ export type Database = {
             columns: ["client_id"]
             isOneToOne: false
             referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      money_entries: {
+        Row: {
+          amount: number
+          client_name: string | null
+          created_at: string
+          document_id: string | null
+          entry_date: string
+          id: string
+          items: Json
+          receipt_number: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          amount?: number
+          client_name?: string | null
+          created_at?: string
+          document_id?: string | null
+          entry_date?: string
+          id?: string
+          items?: Json
+          receipt_number?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          client_name?: string | null
+          created_at?: string
+          document_id?: string | null
+          entry_date?: string
+          id?: string
+          items?: Json
+          receipt_number?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "money_entries_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: true
+            referencedRelation: "documents"
             referencedColumns: ["id"]
           },
         ]

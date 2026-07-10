@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import {
   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { Plus, FileText, Download, MessageCircle, Pencil, Trash2, Receipt, ArrowRight, LogOut, Settings, Users, UserCheck, Clock, TrendingUp, Kanban, PlusCircle, History, FileImage } from 'lucide-react';
+import { Plus, FileText, Download, MessageCircle, Pencil, Trash2, Receipt, ArrowRight, LogOut, Settings, Users, UserCheck, Clock, TrendingUp, Kanban, PlusCircle, History, FileImage, Wallet } from 'lucide-react';
 import { format } from 'date-fns';
 import { toast } from 'sonner';
 import PipelineChart from '@/components/PipelineChart';
@@ -80,7 +80,7 @@ export default function Dashboard() {
 
   const totalRevenue = useMemo(() => {
     return documents
-      .filter(d => d.type === 'invoice' || d.type === 'receipt')
+      .filter(d => d.type === 'receipt')
       .reduce((sum, d) => sum + calculateGrandTotal(d.items, d.taxRate), 0);
   }, [documents]);
 
@@ -187,35 +187,17 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b bg-card">
-        <div className="container mx-auto flex items-center justify-between py-3 sm:py-5 px-3 sm:px-4">
-          <div>
-            <h1 className="text-xl sm:text-2xl font-heading font-bold tracking-tight">HustleOS</h1>
-            <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">Professional Document Builder</p>
-          </div>
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <Button onClick={() => navigate('/create')} size="sm" className="gap-1.5 sm:gap-2 text-xs sm:text-sm sm:size-default">
-              <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              <span className="hidden sm:inline">Create New Quote</span>
-              <span className="sm:hidden">New</span>
-            </Button>
-            <Button variant="outline" size="icon" className="h-8 w-8 sm:h-9 sm:w-9" onClick={() => navigate('/pipeline')} title="Sales Pipeline">
-              <Kanban className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </Button>
-            <Button variant="outline" size="icon" className="h-8 w-8 sm:h-9 sm:w-9" onClick={() => navigate('/clients')} title="Clients">
-              <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </Button>
-            <Button variant="outline" size="icon" className="h-8 w-8 sm:h-9 sm:w-9" onClick={() => navigate('/settings')} title="Profile Settings">
-              <Settings className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </Button>
-            <Button variant="outline" size="icon" className="h-8 w-8 sm:h-9 sm:w-9" onClick={() => signOut()} title="Logout">
-              <LogOut className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </Button>
-          </div>
-        </div>
-      </header>
-
       <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <div>
+            <p className="text-xs sm:text-sm text-muted-foreground">Professional Document Builder</p>
+          </div>
+          <Button onClick={() => navigate('/create')} size="sm" className="gap-1.5 sm:gap-2 text-xs sm:text-sm sm:size-default">
+            <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            <span className="hidden sm:inline">Create New Quote</span>
+            <span className="sm:hidden">New</span>
+          </Button>
+        </div>
         {/* Summary Cards */}
         <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-6">
           <Card className="p-3 sm:p-4 flex items-center gap-2 sm:gap-3 cursor-pointer hover:shadow-md transition-shadow" onClick={() => navigate('/clients')}>
